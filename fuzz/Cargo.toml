@@ -25,7 +25,7 @@ docket-vocab = { path = "../crates/docket-vocab" }
 docket-eval = { path = "../crates/docket-eval" }
 docket-fake = { path = "../crates/docket-fake" }
 eval-core = { path = "../crates/eval-core" }
-prov = { git = "https://github.com/PoHsuanLai/prov", rev = "336086056fa18dd014f7853c7179de8587a25792" }
+prov = { git = "https://github.com/Bardo-DE/prov", rev = "5106c0c2f502711411ba82c72b32c7e543b9cc4d" }
 voice-wire = { path = "../crates/voice-wire" }
 
 [[bin]]

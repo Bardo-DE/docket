@@ -44,7 +44,7 @@ fn var(name: &str) -> String {
 /// The `(git url, rev)` the workspace manifest pins for `repo`, read from its `<repo>-core`-style
 /// dependency lines: the one place the pin lives.
 fn pin(manifest: &str, repo: &str) -> (String, String) {
-    let needle = format!("git = \"https://github.com/PoHsuanLai/{repo}\"");
+    let needle = format!("git = \"https://github.com/Bardo-DE/{repo}\"");
     let line = manifest
         .lines()
         .find(|l| l.contains(&needle))
@@ -55,7 +55,7 @@ fn pin(manifest: &str, repo: &str) -> (String, String) {
         .and_then(|rest| rest.split('"').next())
         .unwrap_or_else(|| panic!("no rev on the {repo} line"));
     (
-        format!("https://github.com/PoHsuanLai/{repo}"),
+        format!("https://github.com/Bardo-DE/{repo}"),
         rev.to_owned(),
     )
 }

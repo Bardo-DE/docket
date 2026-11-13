@@ -210,7 +210,7 @@ checksum = "683d7910e743518b0e34f1186f92494becacb047c7b6bf616c96772180fef923"
 [[package]]
 name = "almanac-client"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/almanac?rev=c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3#c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3"
+source = "git+https://github.com/Bardo-DE/almanac?rev=528e6d3c23df3b1d588fd8d8a8d70c4596b94f80#528e6d3c23df3b1d588fd8d8a8d70c4596b94f80"
 dependencies = [
  "almanac-core",
  "almanac-dbus",
@@ -221,7 +221,7 @@ dependencies = [
 [[package]]
 name = "almanac-core"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/almanac?rev=c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3#c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3"
+source = "git+https://github.com/Bardo-DE/almanac?rev=528e6d3c23df3b1d588fd8d8a8d70c4596b94f80#528e6d3c23df3b1d588fd8d8a8d70c4596b94f80"
 dependencies = [
  "const-hex",
  "porter-core",
@@ -236,7 +236,7 @@ dependencies = [
 [[package]]
 name = "almanac-dbus"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/almanac?rev=c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3#c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3"
+source = "git+https://github.com/Bardo-DE/almanac?rev=528e6d3c23df3b1d588fd8d8a8d70c4596b94f80#528e6d3c23df3b1d588fd8d8a8d70c4596b94f80"
 dependencies = [
  "almanac-core",
  "serde",
@@ -248,7 +248,7 @@ dependencies = [
 [[package]]
 name = "almanac-dbus-serve"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/almanac?rev=c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3#c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3"
+source = "git+https://github.com/Bardo-DE/almanac?rev=528e6d3c23df3b1d588fd8d8a8d70c4596b94f80#528e6d3c23df3b1d588fd8d8a8d70c4596b94f80"
 dependencies = [
  "almanac-core",
  "almanac-dbus",
@@ -260,7 +260,7 @@ dependencies = [
 [[package]]
 name = "almanac-fake"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/almanac?rev=c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3#c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3"
+source = "git+https://github.com/Bardo-DE/almanac?rev=528e6d3c23df3b1d588fd8d8a8d70c4596b94f80#528e6d3c23df3b1d588fd8d8a8d70c4596b94f80"
 dependencies = [
  "almanac-core",
  "almanac-seal",
@@ -280,7 +280,7 @@ dependencies = [
 [[package]]
 name = "almanac-seal"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/almanac?rev=c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3#c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3"
+source = "git+https://github.com/Bardo-DE/almanac?rev=528e6d3c23df3b1d588fd8d8a8d70c4596b94f80#528e6d3c23df3b1d588fd8d8a8d70c4596b94f80"
 dependencies = [
  "almanac-core",
  "blake3",
@@ -294,7 +294,7 @@ dependencies = [
 [[package]]
 name = "almanac-search"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/almanac?rev=c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3#c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3"
+source = "git+https://github.com/Bardo-DE/almanac?rev=528e6d3c23df3b1d588fd8d8a8d70c4596b94f80#528e6d3c23df3b1d588fd8d8a8d70c4596b94f80"
 dependencies = [
  "almanac-core",
  "almanac-store",
@@ -303,7 +303,7 @@ dependencies = [
 [[package]]
 name = "almanac-service"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/almanac?rev=c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3#c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3"
+source = "git+https://github.com/Bardo-DE/almanac?rev=528e6d3c23df3b1d588fd8d8a8d70c4596b94f80#528e6d3c23df3b1d588fd8d8a8d70c4596b94f80"
 dependencies = [
  "almanac-core",
  "almanac-seal",
@@ -325,7 +325,7 @@ dependencies = [
 [[package]]
 name = "almanac-settings"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/almanac?rev=c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3#c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3"
+source = "git+https://github.com/Bardo-DE/almanac?rev=528e6d3c23df3b1d588fd8d8a8d70c4596b94f80#528e6d3c23df3b1d588fd8d8a8d70c4596b94f80"
 dependencies = [
  "almanac-core",
  "serde",
@@ -336,7 +336,7 @@ dependencies = [
 [[package]]
 name = "almanac-store"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/almanac?rev=c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3#c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3"
+source = "git+https://github.com/Bardo-DE/almanac?rev=528e6d3c23df3b1d588fd8d8a8d70c4596b94f80#528e6d3c23df3b1d588fd8d8a8d70c4596b94f80"
 dependencies = [
  "almanac-core",
  "almanac-seal",
@@ -349,7 +349,7 @@ dependencies = [
 [[package]]
 name = "almanac-tidy"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/almanac?rev=c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3#c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3"
+source = "git+https://github.com/Bardo-DE/almanac?rev=528e6d3c23df3b1d588fd8d8a8d70c4596b94f80#528e6d3c23df3b1d588fd8d8a8d70c4596b94f80"
 dependencies = [
  "almanac-core",
  "blake3",
@@ -605,7 +605,7 @@ dependencies = [
 [[package]]
 name = "bulkhead"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/bulkhead?rev=fe1087903357e7cb99152caa5ef8e9dff4e1be7f#fe1087903357e7cb99152caa5ef8e9dff4e1be7f"
+source = "git+https://github.com/Bardo-DE/bulkhead?rev=fe1087903357e7cb99152caa5ef8e9dff4e1be7f#fe1087903357e7cb99152caa5ef8e9dff4e1be7f"
 dependencies = [
  "landlock",
  "serde",
@@ -773,7 +773,7 @@ dependencies = [
 [[package]]
 name = "chordkit"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/chordkit.git?rev=99eec9ddd03ee345b669fcc7954ed44590724290#99eec9ddd03ee345b669fcc7954ed44590724290"
+source = "git+https://github.com/Bardo-DE/chordkit?rev=99eec9ddd03ee345b669fcc7954ed44590724290#99eec9ddd03ee345b669fcc7954ed44590724290"
 dependencies = [
  "thiserror",
 ]
@@ -1063,7 +1063,7 @@ dependencies = [
 [[package]]
 name = "cua-action"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/stoker?rev=98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7#98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7"
+source = "git+https://github.com/Bardo-DE/stoker?rev=98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7#98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7"
 dependencies = [
  "keyboard-types",
  "serde",
@@ -2270,7 +2270,7 @@ dependencies = [
 [[package]]
 name = "ds-core"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/quire.git?rev=d17e19da64c8845d8eb413784b2d84f177a86767#d17e19da64c8845d8eb413784b2d84f177a86767"
+source = "git+https://github.com/Bardo-DE/quire.git?rev=d17e19da64c8845d8eb413784b2d84f177a86767#d17e19da64c8845d8eb413784b2d84f177a86767"
 dependencies = [
  "chordkit",
  "ds-core-derive",
@@ -2283,7 +2283,7 @@ dependencies = [
 [[package]]
 name = "ds-core-derive"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/quire.git?rev=d17e19da64c8845d8eb413784b2d84f177a86767#d17e19da64c8845d8eb413784b2d84f177a86767"
+source = "git+https://github.com/Bardo-DE/quire.git?rev=d17e19da64c8845d8eb413784b2d84f177a86767#d17e19da64c8845d8eb413784b2d84f177a86767"
 dependencies = [
  "proc-macro-crate",
  "proc-macro2",
@@ -2294,7 +2294,7 @@ dependencies = [
 [[package]]
 name = "ds-intents"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/quire.git?rev=d17e19da64c8845d8eb413784b2d84f177a86767#d17e19da64c8845d8eb413784b2d84f177a86767"
+source = "git+https://github.com/Bardo-DE/quire.git?rev=d17e19da64c8845d8eb413784b2d84f177a86767#d17e19da64c8845d8eb413784b2d84f177a86767"
 dependencies = [
  "ds-core",
 ]
@@ -2445,7 +2445,7 @@ dependencies = [
 [[package]]
 name = "eventlog"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/almanac?rev=c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3#c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3"
+source = "git+https://github.com/Bardo-DE/almanac?rev=528e6d3c23df3b1d588fd8d8a8d70c4596b94f80#528e6d3c23df3b1d588fd8d8a8d70c4596b94f80"
 dependencies = [
  "almanac-core",
  "almanac-seal",
@@ -2693,7 +2693,7 @@ dependencies = [
 [[package]]
 name = "genai-names"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/stoker?rev=98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7#98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7"
+source = "git+https://github.com/Bardo-DE/stoker?rev=98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7#98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7"
 
 [[package]]
 name = "generic-array"
@@ -2964,7 +2964,7 @@ dependencies = [
 [[package]]
 name = "inferd-client"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/steward?rev=baedbb000103c7dcc3c73d5f2871c7a1e9dfd33e#baedbb000103c7dcc3c73d5f2871c7a1e9dfd33e"
+source = "git+https://github.com/Bardo-DE/steward?rev=baedbb000103c7dcc3c73d5f2871c7a1e9dfd33e#baedbb000103c7dcc3c73d5f2871c7a1e9dfd33e"
 dependencies = [
  "porter-callers",
  "porter-capability",
@@ -3483,7 +3483,7 @@ checksum = "cf8baf1c55e62ffcace7a9f06f4bd9cd3f0c4beb022d3b367256b91b87513d98"
 [[package]]
 name = "memfiles"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/almanac?rev=c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3#c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3"
+source = "git+https://github.com/Bardo-DE/almanac?rev=528e6d3c23df3b1d588fd8d8a8d70c4596b94f80#528e6d3c23df3b1d588fd8d8a8d70c4596b94f80"
 dependencies = [
  "almanac-core",
  "almanac-seal",
@@ -3493,7 +3493,7 @@ dependencies = [
 [[package]]
 name = "memfiles-format"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/almanac?rev=c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3#c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3"
+source = "git+https://github.com/Bardo-DE/almanac?rev=528e6d3c23df3b1d588fd8d8a8d70c4596b94f80#528e6d3c23df3b1d588fd8d8a8d70c4596b94f80"
 dependencies = [
  "almanac-core",
  "almanac-store",
@@ -3572,7 +3572,7 @@ dependencies = [
 [[package]]
 name = "model-provider"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/stoker?rev=98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7#98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7"
+source = "git+https://github.com/Bardo-DE/stoker?rev=98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7#98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7"
 dependencies = [
  "base64 0.22.1",
  "cua-action",
@@ -3840,7 +3840,7 @@ checksum = "2ee67f1008b1ba2321834326597b8e186293b049a023cdef258527550b9935b4"
 [[package]]
 name = "peephole"
 version = "0.1.11"
-source = "git+https://github.com/PoHsuanLai/peephole?tag=v0.1.11#06a97c105d833b07a37feb48a16dde49ef4d8bc0"
+source = "git+https://github.com/Bardo-DE/peephole?tag=v0.1.11#06a97c105d833b07a37feb48a16dde49ef4d8bc0"
 dependencies = [
  "nix",
  "peephole-core",
@@ -3851,7 +3851,7 @@ dependencies = [
 [[package]]
 name = "peephole-bus"
 version = "0.1.11"
-source = "git+https://github.com/PoHsuanLai/peephole?tag=v0.1.11#06a97c105d833b07a37feb48a16dde49ef4d8bc0"
+source = "git+https://github.com/Bardo-DE/peephole?tag=v0.1.11#06a97c105d833b07a37feb48a16dde49ef4d8bc0"
 dependencies = [
  "futures-timer",
  "peephole",
@@ -3864,7 +3864,7 @@ dependencies = [
 [[package]]
 name = "peephole-core"
 version = "0.1.11"
-source = "git+https://github.com/PoHsuanLai/peephole?tag=v0.1.11#06a97c105d833b07a37feb48a16dde49ef4d8bc0"
+source = "git+https://github.com/Bardo-DE/peephole?tag=v0.1.11#06a97c105d833b07a37feb48a16dde49ef4d8bc0"
 dependencies = [
  "serde",
  "thiserror",
@@ -4006,7 +4006,7 @@ dependencies = [
 [[package]]
 name = "porter-callers"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/porter?rev=f406782b90b67f62f0f14ec5e78aec8992b5d709#f406782b90b67f62f0f14ec5e78aec8992b5d709"
+source = "git+https://github.com/Bardo-DE/porter?rev=f406782b90b67f62f0f14ec5e78aec8992b5d709#f406782b90b67f62f0f14ec5e78aec8992b5d709"
 dependencies = [
  "peephole",
  "peephole-bus",
@@ -4022,7 +4022,7 @@ dependencies = [
 [[package]]
 name = "porter-capability"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/porter?rev=f406782b90b67f62f0f14ec5e78aec8992b5d709#f406782b90b67f62f0f14ec5e78aec8992b5d709"
+source = "git+https://github.com/Bardo-DE/porter?rev=f406782b90b67f62f0f14ec5e78aec8992b5d709#f406782b90b67f62f0f14ec5e78aec8992b5d709"
 dependencies = [
  "porter-ids",
  "serde",
@@ -4031,7 +4031,7 @@ dependencies = [
 [[package]]
 name = "porter-client"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/porter?rev=f406782b90b67f62f0f14ec5e78aec8992b5d709#f406782b90b67f62f0f14ec5e78aec8992b5d709"
+source = "git+https://github.com/Bardo-DE/porter?rev=f406782b90b67f62f0f14ec5e78aec8992b5d709#f406782b90b67f62f0f14ec5e78aec8992b5d709"
 dependencies = [
  "futures-core",
  "futures-util",
@@ -4048,7 +4048,7 @@ dependencies = [
 [[package]]
 name = "porter-client-dbus"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/porter?rev=f406782b90b67f62f0f14ec5e78aec8992b5d709#f406782b90b67f62f0f14ec5e78aec8992b5d709"
+source = "git+https://github.com/Bardo-DE/porter?rev=f406782b90b67f62f0f14ec5e78aec8992b5d709#f406782b90b67f62f0f14ec5e78aec8992b5d709"
 dependencies = [
  "futures-util",
  "porter-capability",
@@ -4068,7 +4068,7 @@ dependencies = [
 [[package]]
 name = "porter-core"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/porter?rev=f406782b90b67f62f0f14ec5e78aec8992b5d709#f406782b90b67f62f0f14ec5e78aec8992b5d709"
+source = "git+https://github.com/Bardo-DE/porter?rev=f406782b90b67f62f0f14ec5e78aec8992b5d709#f406782b90b67f62f0f14ec5e78aec8992b5d709"
 dependencies = [
  "peephole-core",
  "porter-capability",
@@ -4084,7 +4084,7 @@ dependencies = [
 [[package]]
 name = "porter-daemon"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/porter?rev=f406782b90b67f62f0f14ec5e78aec8992b5d709#f406782b90b67f62f0f14ec5e78aec8992b5d709"
+source = "git+https://github.com/Bardo-DE/porter?rev=f406782b90b67f62f0f14ec5e78aec8992b5d709#f406782b90b67f62f0f14ec5e78aec8992b5d709"
 dependencies = [
  "notify",
  "thiserror",
@@ -4093,7 +4093,7 @@ dependencies = [
 [[package]]
 name = "porter-dbus"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/porter?rev=f406782b90b67f62f0f14ec5e78aec8992b5d709#f406782b90b67f62f0f14ec5e78aec8992b5d709"
+source = "git+https://github.com/Bardo-DE/porter?rev=f406782b90b67f62f0f14ec5e78aec8992b5d709#f406782b90b67f62f0f14ec5e78aec8992b5d709"
 dependencies = [
  "porter-core",
  "porter-dbus-macros",
@@ -4110,7 +4110,7 @@ dependencies = [
 [[package]]
 name = "porter-dbus-macros"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/porter?rev=f406782b90b67f62f0f14ec5e78aec8992b5d709#f406782b90b67f62f0f14ec5e78aec8992b5d709"
+source = "git+https://github.com/Bardo-DE/porter?rev=f406782b90b67f62f0f14ec5e78aec8992b5d709#f406782b90b67f62f0f14ec5e78aec8992b5d709"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -4120,7 +4120,7 @@ dependencies = [
 [[package]]
 name = "porter-ids"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/porter?rev=f406782b90b67f62f0f14ec5e78aec8992b5d709#f406782b90b67f62f0f14ec5e78aec8992b5d709"
+source = "git+https://github.com/Bardo-DE/porter?rev=f406782b90b67f62f0f14ec5e78aec8992b5d709#f406782b90b67f62f0f14ec5e78aec8992b5d709"
 dependencies = [
  "chrono",
  "percent-encoding",
@@ -4131,7 +4131,7 @@ dependencies = [
 [[package]]
 name = "porter-infer"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/steward?rev=baedbb000103c7dcc3c73d5f2871c7a1e9dfd33e#baedbb000103c7dcc3c73d5f2871c7a1e9dfd33e"
+source = "git+https://github.com/Bardo-DE/steward?rev=baedbb000103c7dcc3c73d5f2871c7a1e9dfd33e#baedbb000103c7dcc3c73d5f2871c7a1e9dfd33e"
 dependencies = [
  "base64 0.22.1",
  "cua-action",
@@ -4149,7 +4149,7 @@ dependencies = [
 [[package]]
 name = "porter-match"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/porter?rev=f406782b90b67f62f0f14ec5e78aec8992b5d709#f406782b90b67f62f0f14ec5e78aec8992b5d709"
+source = "git+https://github.com/Bardo-DE/porter?rev=f406782b90b67f62f0f14ec5e78aec8992b5d709#f406782b90b67f62f0f14ec5e78aec8992b5d709"
 dependencies = [
  "porter-capability",
  "porter-ids",
@@ -4159,7 +4159,7 @@ dependencies = [
 [[package]]
 name = "porter-sheet"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/porter?rev=f406782b90b67f62f0f14ec5e78aec8992b5d709#f406782b90b67f62f0f14ec5e78aec8992b5d709"
+source = "git+https://github.com/Bardo-DE/porter?rev=f406782b90b67f62f0f14ec5e78aec8992b5d709#f406782b90b67f62f0f14ec5e78aec8992b5d709"
 dependencies = [
  "porter-capability",
  "porter-core",
@@ -4173,7 +4173,7 @@ dependencies = [
 [[package]]
 name = "porter-tailnet"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/steward?rev=baedbb000103c7dcc3c73d5f2871c7a1e9dfd33e#baedbb000103c7dcc3c73d5f2871c7a1e9dfd33e"
+source = "git+https://github.com/Bardo-DE/steward?rev=baedbb000103c7dcc3c73d5f2871c7a1e9dfd33e#baedbb000103c7dcc3c73d5f2871c7a1e9dfd33e"
 dependencies = [
  "porter-ids",
  "porter-tailscale",
@@ -4185,7 +4185,7 @@ dependencies = [
 [[package]]
 name = "porter-tailscale"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/porter?rev=f406782b90b67f62f0f14ec5e78aec8992b5d709#f406782b90b67f62f0f14ec5e78aec8992b5d709"
+source = "git+https://github.com/Bardo-DE/porter?rev=f406782b90b67f62f0f14ec5e78aec8992b5d709#f406782b90b67f62f0f14ec5e78aec8992b5d709"
 dependencies = [
  "porter-ids",
  "serde",
@@ -4196,7 +4196,7 @@ dependencies = [
 [[package]]
 name = "porter-wire"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/porter?rev=f406782b90b67f62f0f14ec5e78aec8992b5d709#f406782b90b67f62f0f14ec5e78aec8992b5d709"
+source = "git+https://github.com/Bardo-DE/porter?rev=f406782b90b67f62f0f14ec5e78aec8992b5d709#f406782b90b67f62f0f14ec5e78aec8992b5d709"
 dependencies = [
  "porter-capability",
  "porter-core",
@@ -4287,7 +4287,7 @@ dependencies = [
 [[package]]
 name = "prov"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/prov?rev=03c855eb4c80779522cf712075dead4a761adc4f#03c855eb4c80779522cf712075dead4a761adc4f"
+source = "git+https://github.com/Bardo-DE/prov?rev=5106c0c2f502711411ba82c72b32c7e543b9cc4d#5106c0c2f502711411ba82c72b32c7e543b9cc4d"
 dependencies = [
  "porter-capability",
  "porter-core",
@@ -4456,7 +4456,7 @@ dependencies = [
 [[package]]
 name = "recall"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/almanac?rev=c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3#c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3"
+source = "git+https://github.com/Bardo-DE/almanac?rev=528e6d3c23df3b1d588fd8d8a8d70c4596b94f80#528e6d3c23df3b1d588fd8d8a8d70c4596b94f80"
 dependencies = [
  "almanac-core",
  "almanac-store",
@@ -4922,7 +4922,7 @@ dependencies = [
 [[package]]
 name = "speech-provider"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/stoker?rev=98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7#98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7"
+source = "git+https://github.com/Bardo-DE/stoker?rev=98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7#98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7"
 dependencies = [
  "base64 0.22.1",
  "model-provider",
@@ -4935,7 +4935,7 @@ dependencies = [
 [[package]]
 name = "speech-vad"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/stoker?rev=98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7#98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7"
+source = "git+https://github.com/Bardo-DE/stoker?rev=98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7#98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7"
 dependencies = [
  "serde",
  "speech-provider",
@@ -4976,7 +4976,7 @@ dependencies = [
 [[package]]
 name = "steward-dbus"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/steward?rev=baedbb000103c7dcc3c73d5f2871c7a1e9dfd33e#baedbb000103c7dcc3c73d5f2871c7a1e9dfd33e"
+source = "git+https://github.com/Bardo-DE/steward?rev=baedbb000103c7dcc3c73d5f2871c7a1e9dfd33e#baedbb000103c7dcc3c73d5f2871c7a1e9dfd33e"
 dependencies = [
  "porter-core",
  "porter-dbus",
@@ -5498,7 +5498,7 @@ checksum = "0b928f33d975fc6ad9f86c8f283853ad26bdd5b10b7f1542aa2fa15e2289105a"
 [[package]]
 name = "vision-prep"
 version = "0.1.0"
-source = "git+https://github.com/PoHsuanLai/stoker?rev=98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7#98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7"
+source = "git+https://github.com/Bardo-DE/stoker?rev=98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7#98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7"
 dependencies = [
  "cua-action",
  "serde",

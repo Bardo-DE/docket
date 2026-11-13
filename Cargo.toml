@@ -76,7 +76,7 @@ edition = "2024"
 license = "MIT OR Apache-2.0"
 # What quire declares; the toolchain itself is pinned in rust-toolchain.toml.
 rust-version = "1.92"
-repository = "https://github.com/PoHsuanLai/docket"
+repository = "https://github.com/Bardo-DE/docket"
 publish = false
 
 [workspace.dependencies]
@@ -150,53 +150,53 @@ tracing = "0.1"
 # porter's frozen interfaces, by git at a pinned rev (quire CONSUMING.md section 1; a local checkout
 # overrides it through a [patch], FINDINGS.md "Cross-repo dependencies"). porter has no docket dependency, so there is
 # no cycle.
-porter-core     = { git = "https://github.com/PoHsuanLai/porter", rev = "f406782b90b67f62f0f14ec5e78aec8992b5d709" }
-porter-ids      = { git = "https://github.com/PoHsuanLai/porter", rev = "f406782b90b67f62f0f14ec5e78aec8992b5d709" }
-porter-capability = { git = "https://github.com/PoHsuanLai/porter", rev = "f406782b90b67f62f0f14ec5e78aec8992b5d709" }
-porter-match    = { git = "https://github.com/PoHsuanLai/porter", rev = "f406782b90b67f62f0f14ec5e78aec8992b5d709" }
-porter-wire     = { git = "https://github.com/PoHsuanLai/porter", rev = "f406782b90b67f62f0f14ec5e78aec8992b5d709" }
-prov            = { git = "https://github.com/PoHsuanLai/prov", rev = "03c855eb4c80779522cf712075dead4a761adc4f" }
+porter-core     = { git = "https://github.com/Bardo-DE/porter", rev = "f406782b90b67f62f0f14ec5e78aec8992b5d709" }
+porter-ids      = { git = "https://github.com/Bardo-DE/porter", rev = "f406782b90b67f62f0f14ec5e78aec8992b5d709" }
+porter-capability = { git = "https://github.com/Bardo-DE/porter", rev = "f406782b90b67f62f0f14ec5e78aec8992b5d709" }
+porter-match    = { git = "https://github.com/Bardo-DE/porter", rev = "f406782b90b67f62f0f14ec5e78aec8992b5d709" }
+porter-wire     = { git = "https://github.com/Bardo-DE/porter", rev = "f406782b90b67f62f0f14ec5e78aec8992b5d709" }
+prov            = { git = "https://github.com/Bardo-DE/prov", rev = "5106c0c2f502711411ba82c72b32c7e543b9cc4d" }
 # The confined shell and agent sandbox (bubblewrap as a separate process).
-bulkhead        = { git = "https://github.com/PoHsuanLai/bulkhead", rev = "fe1087903357e7cb99152caa5ef8e9dff4e1be7f" }
-porter-client   = { git = "https://github.com/PoHsuanLai/porter", rev = "f406782b90b67f62f0f14ec5e78aec8992b5d709" }
-porter-client-dbus = { git = "https://github.com/PoHsuanLai/porter", rev = "f406782b90b67f62f0f14ec5e78aec8992b5d709" }
-porter-dbus     = { git = "https://github.com/PoHsuanLai/porter", rev = "f406782b90b67f62f0f14ec5e78aec8992b5d709" }
-porter-daemon   = { git = "https://github.com/PoHsuanLai/porter", rev = "f406782b90b67f62f0f14ec5e78aec8992b5d709", default-features = false }
-porter-callers  = { git = "https://github.com/PoHsuanLai/porter", rev = "f406782b90b67f62f0f14ec5e78aec8992b5d709" }
+bulkhead        = { git = "https://github.com/Bardo-DE/bulkhead", rev = "fe1087903357e7cb99152caa5ef8e9dff4e1be7f" }
+porter-client   = { git = "https://github.com/Bardo-DE/porter", rev = "f406782b90b67f62f0f14ec5e78aec8992b5d709" }
+porter-client-dbus = { git = "https://github.com/Bardo-DE/porter", rev = "f406782b90b67f62f0f14ec5e78aec8992b5d709" }
+porter-dbus     = { git = "https://github.com/Bardo-DE/porter", rev = "f406782b90b67f62f0f14ec5e78aec8992b5d709" }
+porter-daemon   = { git = "https://github.com/Bardo-DE/porter", rev = "f406782b90b67f62f0f14ec5e78aec8992b5d709", default-features = false }
+porter-callers  = { git = "https://github.com/Bardo-DE/porter", rev = "f406782b90b67f62f0f14ec5e78aec8992b5d709" }
 
 # steward's inference side (the models, inferd and its client), by git at a pinned rev: `inferd-client`'s
 # `Transport` is what the model-asking crates are generic over, `porter-infer` the `Model` and session seams.
-porter-infer    = { git = "https://github.com/PoHsuanLai/steward", rev = "baedbb000103c7dcc3c73d5f2871c7a1e9dfd33e" }
-inferd-client   = { git = "https://github.com/PoHsuanLai/steward", rev = "baedbb000103c7dcc3c73d5f2871c7a1e9dfd33e" }
-steward-dbus    = { git = "https://github.com/PoHsuanLai/steward", rev = "baedbb000103c7dcc3c73d5f2871c7a1e9dfd33e" }
+porter-infer    = { git = "https://github.com/Bardo-DE/steward", rev = "baedbb000103c7dcc3c73d5f2871c7a1e9dfd33e" }
+inferd-client   = { git = "https://github.com/Bardo-DE/steward", rev = "baedbb000103c7dcc3c73d5f2871c7a1e9dfd33e" }
+steward-dbus    = { git = "https://github.com/Bardo-DE/steward", rev = "baedbb000103c7dcc3c73d5f2871c7a1e9dfd33e" }
 
 # almanac's frozen interfaces, by git at a pinned rev. docket-core names almanac-core's pure types
 # (episodes, recall and recent shapes); intentd reaches memoryd through almanac-client.
-almanac-core    = { git = "https://github.com/PoHsuanLai/almanac", rev = "c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3" }
+almanac-core    = { git = "https://github.com/Bardo-DE/almanac", rev = "528e6d3c23df3b1d588fd8d8a8d70c4596b94f80" }
 # Without its default desktop switch (`quire-desktop`, which pulls the bus): the portable crates name
 # no feature, the daemons name `dbus`.
-almanac-client  = { git = "https://github.com/PoHsuanLai/almanac", rev = "c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3", default-features = false }
+almanac-client  = { git = "https://github.com/Bardo-DE/almanac", rev = "528e6d3c23df3b1d588fd8d8a8d70c4596b94f80", default-features = false }
 # Test-only: a MemoryService over in-memory seams, the backend of the in-process memory tests.
-almanac-fake    = { git = "https://github.com/PoHsuanLai/almanac", rev = "c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3" }
-almanac-service = { git = "https://github.com/PoHsuanLai/almanac", rev = "c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3" }
+almanac-fake    = { git = "https://github.com/Bardo-DE/almanac", rev = "528e6d3c23df3b1d588fd8d8a8d70c4596b94f80" }
+almanac-service = { git = "https://github.com/Bardo-DE/almanac", rev = "528e6d3c23df3b1d588fd8d8a8d70c4596b94f80" }
 # Test-only: the fake memoryd of intentd's audit tests serves the real wire (dev-dependency).
-almanac-dbus    = { git = "https://github.com/PoHsuanLai/almanac", rev = "c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3" }
-almanac-dbus-serve = { git = "https://github.com/PoHsuanLai/almanac", rev = "c1bbec7e5a9cbf22122abd31ca8630871dbbfbb3" }
+almanac-dbus    = { git = "https://github.com/Bardo-DE/almanac", rev = "528e6d3c23df3b1d588fd8d8a8d70c4596b94f80" }
+almanac-dbus-serve = { git = "https://github.com/Bardo-DE/almanac", rev = "528e6d3c23df3b1d588fd8d8a8d70c4596b94f80" }
 
 # stoker's pure vocabulary, by git at a pinned rev: the computer-use actions (`CuaAsk`), the structured
 # output shapes (`ValueSchema` renders through `Shape`) and the speech VAD helpers.
-cua-action      = { git = "https://github.com/PoHsuanLai/stoker", rev = "98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7" }
+cua-action      = { git = "https://github.com/Bardo-DE/stoker", rev = "98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7" }
 # model-provider's `Money`: an exact decimal amount and an ISO 4217 currency (same versions as porter and stoker).
 rust_decimal    = { version = "1", default-features = false, features = ["std", "serde"] }
 iso_currency    = { version = "0.7", features = ["with-serde"] }
-model-provider  = { git = "https://github.com/PoHsuanLai/stoker", rev = "98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7" }
+model-provider  = { git = "https://github.com/Bardo-DE/stoker", rev = "98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7" }
 # The OpenTelemetry GenAI names (no dependencies; no content attribute exists in it): the router's spans.
-genai-names     = { git = "https://github.com/PoHsuanLai/stoker", rev = "98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7" }
-speech-vad      = { git = "https://github.com/PoHsuanLai/stoker", rev = "98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7" }
-speech-provider = { git = "https://github.com/PoHsuanLai/stoker", rev = "98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7" }
+genai-names     = { git = "https://github.com/Bardo-DE/stoker", rev = "98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7" }
+speech-vad      = { git = "https://github.com/Bardo-DE/stoker", rev = "98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7" }
+speech-provider = { git = "https://github.com/Bardo-DE/stoker", rev = "98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7" }
 
 # quire's view-only context seams, for `docket-ds` alone (by git at a pinned rev).
-ds-intents      = { git = "https://github.com/PoHsuanLai/quire.git", rev = "d17e19da64c8845d8eb413784b2d84f177a86767" }
+ds-intents      = { git = "https://github.com/Bardo-DE/quire.git", rev = "d17e19da64c8845d8eb413784b2d84f177a86767" }
 
 # From quire's pinned block (`docs/workspace-deps.toml`), copied verbatim: only the lines docket
 # names itself.
@@ -249,3 +249,32 @@ zip = { version = "9", default-features = false, features = ["deflate-flate2"] }
 [workspace.lints.rust]
 unsafe_code = "deny"
 missing_debug_implementations = "warn"
+
+# Pinned dependencies still name these moved repos by their old PoHsuanLai URLs. The patches read
+# them at the same revs from github.com/Bardo-DE, so each crate has one source and nothing is
+# fetched through the old URLs. Delete a block when no pinned rev names that URL any more.
+[patch."https://github.com/PoHsuanLai/chordkit"]
+chordkit = { git = "https://github.com/Bardo-DE/chordkit", rev = "99eec9ddd03ee345b669fcc7954ed44590724290" }
+
+[patch."https://github.com/PoHsuanLai/peephole"]
+peephole-bus = { git = "https://github.com/Bardo-DE/peephole", tag = "v0.1.11" }
+peephole-core = { git = "https://github.com/Bardo-DE/peephole", tag = "v0.1.11" }
+peephole = { git = "https://github.com/Bardo-DE/peephole", tag = "v0.1.11" }
+
+[patch."https://github.com/PoHsuanLai/porter"]
+porter-callers = { git = "https://github.com/Bardo-DE/porter", rev = "f406782b90b67f62f0f14ec5e78aec8992b5d709" }
+porter-capability = { git = "https://github.com/Bardo-DE/porter", rev = "f406782b90b67f62f0f14ec5e78aec8992b5d709" }
+porter-core = { git = "https://github.com/Bardo-DE/porter", rev = "f406782b90b67f62f0f14ec5e78aec8992b5d709" }
+porter-dbus-macros = { git = "https://github.com/Bardo-DE/porter", rev = "f406782b90b67f62f0f14ec5e78aec8992b5d709" }
+porter-dbus = { git = "https://github.com/Bardo-DE/porter", rev = "f406782b90b67f62f0f14ec5e78aec8992b5d709" }
+porter-ids = { git = "https://github.com/Bardo-DE/porter", rev = "f406782b90b67f62f0f14ec5e78aec8992b5d709" }
+porter-match = { git = "https://github.com/Bardo-DE/porter", rev = "f406782b90b67f62f0f14ec5e78aec8992b5d709" }
+porter-tailscale = { git = "https://github.com/Bardo-DE/porter", rev = "f406782b90b67f62f0f14ec5e78aec8992b5d709" }
+porter-wire = { git = "https://github.com/Bardo-DE/porter", rev = "f406782b90b67f62f0f14ec5e78aec8992b5d709" }
+
+[patch."https://github.com/PoHsuanLai/stoker"]
+cua-action = { git = "https://github.com/Bardo-DE/stoker", rev = "98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7" }
+genai-names = { git = "https://github.com/Bardo-DE/stoker", rev = "98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7" }
+model-provider = { git = "https://github.com/Bardo-DE/stoker", rev = "98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7" }
+vision-prep = { git = "https://github.com/Bardo-DE/stoker", rev = "98621a2f3730ea1c3e0b8abce00f8e4fe91fe7d7" }
+
