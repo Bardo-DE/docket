@@ -76,7 +76,7 @@ impl<H: SessionHost, L: SessionLog, W: Wire, T: Ticks> Server<H, L, W, T> {
             .host
             .open(opening)
             .await
-            .map_err(|_| fault::internal("the session could not be opened"))?;
+            .map_err(|e| { eprintln!("docket-acp: LOCAL open failed: {e:?}"); fault::internal("the session could not be opened") })?;
         let mode = Mode::default();
         self.roster.insert(session.clone(), Known { mode });
         json(&NewSessionResponse::new(out::wire_id(&session)).modes(mode.state()))

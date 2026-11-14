@@ -166,7 +166,7 @@ where
                 helper: None,
             })
             .await
-            .map_err(|_| BackendFault::Unavailable)?
+            .map_err(|e| { eprintln!("docket-acp: LOCAL core.open failed: {e:?}"); BackendFault::Unavailable })?
         };
         let mut backend = self.fresh(&opened.session);
         backend

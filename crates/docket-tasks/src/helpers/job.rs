@@ -117,7 +117,10 @@ impl<P: InferTransport, I: IntentsTransport, K: Now, S: Surface> Companion<P, I,
     pub async fn open_job(&mut self, spec: &JobSpec) -> Result<OpenedJob, JobFault> {
         self.refresh_catalogue().await;
         self.config.budget.calls = spec.card.budget.steps;
-        self.as_helper = Some(spec.card.id.clone());
+        self.as_helper = Some(super::AsHelper {
+            id: spec.card.id.clone(),
+            reach: spec.card.reach.clone(),
+        });
         let open = SessionOpen {
             space: spec.card.space.clone(),
             agent: AgentRef::Companion,
@@ -127,6 +130,7 @@ impl<P: InferTransport, I: IntentsTransport, K: Now, S: Surface> Companion<P, I,
             external: None,
             helper: Some(HelperSeat {
                 helper: spec.card.id.clone(),
+                name: spec.card.name.clone(),
                 reach: spec.card.reach.clone(),
                 owns: spec.job.owns.iter().cloned().collect(),
             }),
@@ -258,6 +262,21 @@ impl<P: InferTransport, I: IntentsTransport, K: Now, S: Surface> Companion<P, I,
             (Ok(()), LoopPhase::Paused(_)) => (JobEnding::Failed(JobFault::Refused), None),
             (Ok(()), _) => (JobEnding::Failed(JobFault::Crashed), None),
         };
+        if let JobEnding::Failed(fault) = &ending {
+            tracing::info!(
+                ?fault,
+                loop_phase = ?state.phase,
+                answer = ?rt.phase,
+                failure = ?rt.failure,
+                refused = ?rt.refused,
+                steps = ?rt
+                    .history
+                    .iter()
+                    .map(|line| (line.action.name.as_str(), &line.end))
+                    .collect::<Vec<_>>(),
+                "a helper's job did not finish"
+            );
+        }
         JobReport {
             ending,
             calls,

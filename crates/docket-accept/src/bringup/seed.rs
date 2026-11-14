@@ -12,7 +12,7 @@ pub const NO_LOCAL_ENGINE: &str =
     "[engines]\n\n[probe]\nollama = []\nllama_cpp = []\nlm_studio = []\n";
 
 /// Tables the person's extra rows may not hold: `up` owns them.
-const OWNED_TABLES: [&str; 3] = ["engines", "probe", "callers"];
+const OWNED_TABLES: [&str; 2] = ["probe", "callers"];
 
 /// Why the person's extra `inferd.toml` rows are refused.
 #[derive(Debug, thiserror::Error, PartialEq, Eq)]
@@ -35,7 +35,12 @@ pub fn inferd_toml(root: &Path, extra: &str) -> Result<String, ExtraFault> {
     if let Some(owned) = OWNED_TABLES.iter().find(|name| table.contains_key(**name)) {
         return Err(ExtraFault::Owned(owned));
     }
-    let body = format!("{NO_LOCAL_ENGINE}\n{extra}");
+    // SCRATCH PATCH (agentui UI test, not for master): an [engines] table from the extra rows
+    // replaces the empty one, so an engine served outside (attached by socket) can be named.
+    let body = match table.contains_key("engines") {
+        true => format!("[probe]\nollama = []\nllama_cpp = []\nlm_studio = []\n\n{extra}"),
+        false => format!("{NO_LOCAL_ENGINE}\n{extra}"),
+    };
     let model = crate::world::ModelSource::Live(body);
     Ok(crate::world::inferd_toml(root, &model, None))
 }
@@ -43,7 +48,7 @@ pub fn inferd_toml(root: &Path, extra: &str) -> Result<String, ExtraFault> {
 /// The rows an install gives inferd beside the apps: the shell's unit (here `sill.service`, the
 /// unit the fake proc root puts the shell in) and the daemons that may choose where the
 /// assistant runs.
-const SHELL_CALLERS: &str = "shell = [\"sill.service\"]\nplaces = [\"companiond.service\", \"readerd.service\", \"intentd.service\"]\n\n";
+const SHELL_CALLERS: &str = "shell = [\"sill.service\"]\ncua = [\"cuad.service\"]\nsettings = [\"org.quire.Settings.service\"]\nplaces = [\"companiond.service\", \"readerd.service\", \"intentd.service\"]\n\n";
 
 /// inferd's system caller table for a root: the shell and the places rows, then the apps.
 pub fn inferd_callers() -> String {
