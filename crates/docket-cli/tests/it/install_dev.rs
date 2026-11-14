@@ -2,7 +2,7 @@
 //! scratch tempdir, the binaries are fake files named by `INSTALL_DEV_BIN_DIR` (nothing builds,
 //! nothing is compiled), and the environment is cleared, so the person's real `~/.config`,
 //! `~/.local` and `/etc` are never named. The script reads the sibling checkouts' `dist` files, so the tests that
-//! install skip (and say so) when porter, almanac and stoker are not checked out beside docket: a plain
+//! install skip (and say so) when porter, steward, almanac and stoker are not checked out beside docket: a plain
 //! clone builds with no sibling, and this is a developer tool.
 
 use std::collections::BTreeSet;
@@ -27,11 +27,11 @@ const BINARIES: [&str; 12] = [
 /// The script's sources are the sibling checkouts; without them there is nothing to install from.
 fn siblings_present() -> bool {
     let beside = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../..");
-    let here = ["porter/dist", "almanac/dbus", "stoker/catalog"]
+    let here = ["porter/dist", "steward/dist", "almanac/dbus", "stoker/catalog"]
         .iter()
         .all(|dir| beside.join(dir).is_dir());
     if !here {
-        eprintln!("skipped: porter, almanac and stoker are not checked out beside docket");
+        eprintln!("skipped: porter, steward, almanac and stoker are not checked out beside docket");
     }
     here
 }

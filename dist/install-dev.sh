@@ -7,8 +7,8 @@
 #   dist/install-dev.sh --dry-run             print every action; write nothing, build nothing
 #   dist/install-dev.sh --uninstall           remove exactly what the last install put down
 #
-# The checkouts are the siblings of this one: ../porter (inferd, accountd), ../almanac (memoryd),
-# ../stoker (the model catalog inferd reads) and this checkout (intentd, companiond, readerd,
+# The checkouts are the siblings of this one: ../porter (accountd), ../steward (inferd), ../almanac
+# (memoryd), ../stoker (the model catalog inferd reads) and this checkout (intentd, companiond, readerd,
 # actions-mcp, quire-do, docket-eval). voiced (a skeleton), syncd and cuad are not installed.
 #
 # What goes where (XDG_CONFIG_HOME and XDG_DATA_HOME are honoured):
@@ -27,7 +27,7 @@
 # left out, drop-ins an earlier install put down are removed. Dev-only change to them: when the
 # prefix is under $HOME, the home folder is made read-only instead of hidden (hidden, the programs
 # could not start from there, and companiond could not read its config and skills). The porter units need nothing: they make their own
-# directories. --cloud installs porter's dist/inferd-cloud.conf as inferd.service.d/cloud.conf (network
+# directories. --cloud installs steward's dist/inferd-cloud.conf as inferd.service.d/cloud.conf (network
 # on); it is opt-in because local engines share inferd's sandbox, so an on-device-only setup keeps none.
 # memoryd has no unit in almanac/dist: almanac/dbus/memoryd.service is its unit, started by D-Bus
 # activation (org.quire.Memory1.service names it), and that is what is installed.
@@ -44,6 +44,7 @@ HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DOCKET="$(cd "$HERE/.." && pwd)"
 SIBLINGS="${INSTALL_DEV_SIBLINGS:-$(cd "$DOCKET/.." && pwd)}"
 PORTER="$SIBLINGS/porter"
+STEWARD="$SIBLINGS/steward"
 ALMANAC="$SIBLINGS/almanac"
 STOKER="$SIBLINGS/stoker"
 CUA="$SIBLINGS/cua"
@@ -92,10 +93,10 @@ BINARIES=(
   "docket-net-forward docket docket-acp-bin"
   "docket-net-enter docket docket-acp-bin"
   "memoryd almanac memoryd"
-  "inferd porter inferd"
+  "inferd steward inferd"
   "accountd porter accountd"
 )
-repo_dir() { case "$1" in docket) echo "$DOCKET" ;; almanac) echo "$ALMANAC" ;; porter) echo "$PORTER" ;; esac; }
+repo_dir() { case "$1" in docket) echo "$DOCKET" ;; almanac) echo "$ALMANAC" ;; porter) echo "$PORTER" ;; steward) echo "$STEWARD" ;; esac; }
 
 # The installed set: "kind source dest" per line. Kinds: bin (copied, mode 755), unit and dbus
 # (copied with the Exec rewritten), data (copied, mode 644), config (copied only if absent).
@@ -139,19 +140,20 @@ build_plan() {
     read -r name repo pkg <<<"$entry"
     plan bin "$(bin_source "$name" "$repo")" "$BIN/$name"
   done
-  plan_units "$DOCKET/dist"; plan_units "$PORTER/dist"
+  plan_units "$DOCKET/dist"; plan_units "$PORTER/dist"; plan_units "$STEWARD/dist"
   plan unit "$ALMANAC/dbus/memoryd.service" "$UNITS/memoryd.service"
   plan_sandbox "$ALMANAC/dbus/memoryd.service"
-  plan_dbus "$DOCKET/dist/dbus"; plan_dbus "$PORTER/dist/dbus"
+  plan_dbus "$DOCKET/dist/dbus"; plan_dbus "$PORTER/dist/dbus"; plan_dbus "$STEWARD/dist/dbus"
   plan dbus "$ALMANAC/dbus/org.quire.Memory1.service" "$DBUS/org.quire.Memory1.service"
   plan_tree data "$DOCKET/dist/skills" "$DATA/quire/skills"
   plan_tree data "$DOCKET/policy/presets" "$DATA/quire/permissions"
   local dir
-  for dir in "$DOCKET" "$ALMANAC" "$PORTER" "$CUA"; do
+  for dir in "$DOCKET" "$ALMANAC" "$PORTER" "$STEWARD" "$CUA"; do
     plan_tree data "$dir/dist/intents" "$DATA/quire/intents"
     plan_tree data "$dir/dist/settings" "$DATA/quire/settings"
   done
-  plan data "$PORTER/dist/inferd.settings.toml" "$DATA/quire/settings/inferd.settings.toml"
+  plan data "$STEWARD/dist/inferd.settings.toml" "$DATA/quire/settings/inferd.settings.toml"
+  plan data "$ALMANAC/crates/almanac-settings/schema/almanac.settings.toml" "$DATA/quire/settings/almanac.settings.toml"
   plan_tree data "$PORTER/providers" "$DATA/porter/providers"
   plan_tree data "$STOKER/catalog" "$DATA/stoker/catalog"
   local cfg
@@ -161,8 +163,8 @@ build_plan() {
     case "$(basename "$cfg")" in voiced.toml|*-callers.toml) continue ;; esac
     plan config "$cfg" "$QUIRE_CONFIG/$(basename "$cfg")"
   done
-  if [ "$CLOUD" = 1 ]; then plan dropin "$PORTER/dist/inferd-cloud.conf" "$UNITS/inferd.service.d/cloud.conf"; fi
-  plan config "$PORTER/dist/inferd.toml" "$QUIRE_CONFIG/inferd.toml"
+  if [ "$CLOUD" = 1 ]; then plan dropin "$STEWARD/dist/inferd-cloud.conf" "$UNITS/inferd.service.d/cloud.conf"; fi
+  plan config "$STEWARD/dist/inferd.toml" "$QUIRE_CONFIG/inferd.toml"
   plan config "$ALMANAC/dbus/memory-callers.toml" "$QUIRE_CONFIG/memory-callers.toml"
 }
 
@@ -300,7 +302,7 @@ build_all() {
   [ "$DRY" = 1 ] || command -v git >/dev/null 2>&1 || { echo "Building needs git (some libraries are downloaded with it). Install it with your system's package manager, then run this again." >&2; exit 1; }
   [ "$DRY" = 1 ] || say "The first build downloads code, so it needs the internet, and it takes a while."
   local repo
-  for repo in docket almanac porter; do
+  for repo in docket almanac porter steward; do
     local packages=() entry name r pkg
     for entry in "${BINARIES[@]}"; do
       read -r name r pkg <<<"$entry"
@@ -337,7 +339,7 @@ launcher writes its row, role agent_launcher). inferd reads who is calling from
 only when they start:
 
   sudo install -D -m644 $PORTER/dist/callers.toml /etc/porter/callers.toml
-  sudo install -D -m644 $PORTER/dist/inferd-callers.toml /etc/porter/inferd-callers.toml
+  sudo install -D -m644 $STEWARD/dist/inferd-callers.toml /etc/porter/inferd-callers.toml
 
 The agent daemons name their callers the same way, by the unit behind a connection, from
 /etc/quire/<daemon>-callers.toml (the system's file alone can say which unit is sill, the shell;
