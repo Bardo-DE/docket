@@ -27,9 +27,14 @@ const BINARIES: [&str; 12] = [
 /// The script's sources are the sibling checkouts; without them there is nothing to install from.
 fn siblings_present() -> bool {
     let beside = Path::new(env!("CARGO_MANIFEST_DIR")).join("../../..");
-    let here = ["porter/dist", "steward/dist", "almanac/dbus", "stoker/catalog"]
-        .iter()
-        .all(|dir| beside.join(dir).is_dir());
+    let here = [
+        "porter/dist",
+        "steward/dist",
+        "almanac/dbus",
+        "stoker/catalog",
+    ]
+    .iter()
+    .all(|dir| beside.join(dir).is_dir());
     if !here {
         eprintln!("skipped: porter, steward, almanac and stoker are not checked out beside docket");
     }
